@@ -1,11 +1,11 @@
 const discord = require("discord.js");
-const Sequelize = require('sequelize');
 const fs = require("fs");
 const config = require("./config.json");
 const bot = new discord.Client({disablelEveryone: true});
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is ready!`);
+  bot.user.setActivity("System");
 });
 
 bot.commands = new discord.Collection();
@@ -36,26 +36,6 @@ bot.on("message", async message => {
 
   let cmd = bot.commands.get(command.slice(prefix.length))
   if (cmd) cmd.run(bot, message, args)
-  
-  if (message.content.startsWith(prefix)) {
-      const input = message.content.slice(prefix.length).split(' ');
-      const command = input.shift();
-      const commandArgs = input.join(' ');
-
-      if (command === 'addtag') {
-	// [delta]
-      } else if (command === 'tag') {
-	// [epsilon]
-      } else if (command === 'edittag') {
-			// [zeta]
-      } else if (command === 'taginfo') {
-			// [theta]
-      } else if (command === 'showtags') {
-			// [lambda]
-      } else if (command === 'removetag') {
-			// [mu]
-      }
-    }
 });
 
 bot.login(config.token);
