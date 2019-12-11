@@ -38,24 +38,24 @@ bot.on("message", async message => {
   if (cmd) cmd.run(bot, message, args)
   
   if (message.content.startsWith(prefix)) {
-		const input = message.content.slice(prefix.length).split(' ');
-		const command = input.shift();
-		const commandArgs = input.join(' ');
+      const input = message.content.slice(prefix.length).split(' ');
+      const command = input.shift();
+      const commandArgs = input.join(' ');
 
-		if (command === 'addtag') {
-			// [delta]
-		} else if (command === 'tag') {
-			// [epsilon]
-		} else if (command === 'edittag') {
+      if (command === 'addtag') {
+	// [delta]
+      } else if (command === 'tag') {
+	// [epsilon]
+      } else if (command === 'edittag') {
 			// [zeta]
-		} else if (command === 'taginfo') {
+      } else if (command === 'taginfo') {
 			// [theta]
-		} else if (command === 'showtags') {
+      } else if (command === 'showtags') {
 			// [lambda]
-		} else if (command === 'removetag') {
+      } else if (command === 'removetag') {
 			// [mu]
-		}
-	}
+      }
+    }
 });
 
 bot.login(config.token);
